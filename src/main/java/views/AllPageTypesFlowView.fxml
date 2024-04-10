@@ -7,32 +7,32 @@
 
 <FlowPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="554.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button mnemonicParsing="false" text="Person">
+      <Button fx:id="PersonPageTypeBtn" mnemonicParsing="false" text="Person">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button mnemonicParsing="false" text="Company">
+      <Button fx:id="CompanyPageTypeBtn" mnemonicParsing="false" text="Company">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button mnemonicParsing="false" text="Skill">
+      <Button fx:id="SkillPageTypeBtn" mnemonicParsing="false" text="Skill">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button mnemonicParsing="false" text="Job Posting">
+      <Button fx:id="JobPostingPageTypeBtn" mnemonicParsing="false" text="Job Posting">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button mnemonicParsing="false" text="Project">
+      <Button fx:id="ProjectPageTypeBtn" mnemonicParsing="false" text="Project">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button mnemonicParsing="false" text="News Article">
+      <Button fx:id="NewsArticlePageTypeBtn" mnemonicParsing="false" text="News Article">
          <font>
             <Font size="18.0" />
          </font>
