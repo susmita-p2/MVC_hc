@@ -1,0 +1,42 @@
+package main;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
+import views.LoginPageController;
+import model.LoginNavigationModel;
+import model.LoginNavigationModelInterface;
+
+
+public class Main extends Application
+{
+
+
+  @Override
+  public void start(Stage stage) throws Exception
+  {        
+    FXMLLoader loader = new FXMLLoader();
+    loader.setLocation(Main.class.getResource("../views/LoginPage.fxml"));
+	  BorderPane view = loader.load();
+
+    LoginPageController cont = loader.getController();
+    LoginNavigationModelInterface navModel = new LoginNavigationModel(view); 
+
+    cont.setModel(navModel);
+    
+    navModel.showLogin();
+    
+    
+    Scene s = new Scene(view);
+    stage.setScene(s);
+    stage.show();
+   }
+
+  
+  public static void main(String [] args)
+  {
+    launch(args);
+  }
+  
+}

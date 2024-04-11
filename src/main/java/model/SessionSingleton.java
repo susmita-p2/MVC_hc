@@ -40,7 +40,7 @@ public class SessionSingleton
 	
 	public boolean checkPassword(String id, String password)
 	{
-		if(password.toLowerCase() == "fail")
+		if(password == "" || id == "")
 		{
 			return false;
 		}
