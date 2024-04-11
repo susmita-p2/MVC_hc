@@ -25,7 +25,7 @@ public class SessionSingleton
 		this.userId = "";
 	}
 	
-	boolean void startSession(String id, String password)
+	public boolean startSession(String id, String password)
 	{
 		if(this.checkPassword(id, password))
 		{
@@ -40,6 +40,11 @@ public class SessionSingleton
 	
 	public boolean checkPassword(String id, String password)
 	{
+		if(password.toLowerCase() == "fail")
+		{
+			return false;
+		}
+		
 		return true;
 	}
 	
