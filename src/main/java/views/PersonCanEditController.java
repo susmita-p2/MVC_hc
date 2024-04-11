@@ -5,9 +5,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import model.PersonModel;
+import model.PersonTransitionModel;
 
 public class PersonCanEditController {
 
+	PersonTransitionModel transitionModel;
 	PersonModel model;
     @FXML
     private Label descriptionLabel;
@@ -35,12 +37,12 @@ public class PersonCanEditController {
     }
     @FXML
     void onFollowClick(ActionEvent event) {
-
+	 	
     }
     
     @FXML
     void onEditClick(ActionEvent event) {
-    	
+    	transitionModel.showEditablePerson();
     }
 
 }
