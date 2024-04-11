@@ -9,7 +9,7 @@ public class PersonModel
 {
 	StringProperty  name = new SimpleStringProperty();
 	StringProperty  email = new SimpleStringProperty();
-	StringProperty  pronoun = new SimpleStringProperty();
+	StringProperty  pronouns = new SimpleStringProperty();
 	StringProperty phone = new SimpleStringProperty();
 	StringProperty  id = new SimpleStringProperty();
 	StringProperty  description= new SimpleStringProperty();
@@ -25,14 +25,14 @@ public class PersonModel
 	 * @param external_links
 	 * @param page_links
 	 */
-	public PersonModel(StringProperty name, StringProperty email, StringProperty pronoun, StringProperty phone,
+	public PersonModel(StringProperty name, StringProperty email, StringProperty pronouns, StringProperty phone,
 			StringProperty id, StringProperty description, ObservableList<String> external_links,
 			ObservableMap<String, ObservableList<String>> page_links)
 	{
 		super();
 		this.name = name;
 		this.email = email;
-		this.pronoun = pronoun;
+		this.pronouns = pronouns;
 		this.phone = phone;
 		this.id = id;
 		this.description = description;
@@ -70,16 +70,16 @@ public class PersonModel
 	/**
 	 * @return the pronoun
 	 */
-	public StringProperty getPronoun()
+	public StringProperty getPronouns()
 	{
-		return pronoun;
+		return pronouns;
 	}
 	/**
 	 * @param pronoun the pronoun to set
 	 */
-	public void setPronoun(StringProperty pronoun)
+	public void setPronouns(StringProperty pronouns)
 	{
-		this.pronoun = pronoun;
+		this.pronouns = pronouns;
 	}
 	/**
 	 * @return the phone
