@@ -9,6 +9,7 @@ import model.PersonTransitionModel;
 
 public class PersonCanEditController {
 
+	PersonTransitionModel transitionModel;
 	PersonModel model;
 	PersonTransitionModel transitionModel; 
 	
@@ -39,12 +40,12 @@ public class PersonCanEditController {
     }
     @FXML
     void onFollowClick(ActionEvent event) {
-
+	 	
     }
     
     @FXML
     void onEditClick(ActionEvent event) {
-    	
+    	transitionModel.showEditablePerson();
     }
 
 }
