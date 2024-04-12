@@ -7,11 +7,13 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import views.PersonCanEditController;
 import views.DirectoryController;
-import views.LoginController;
+import views.LoginPageController;
 
 public class HomeTransitionModel {
 	BorderPane mainview;
 	PersonModel model;
+	LoginNavigationModel loginNavigationModel;
+	PersonTransitionModel personTransitionModel;
 	
 	public void showHome() {
 	    FXMLLoader loader = new FXMLLoader();
@@ -21,7 +23,7 @@ public class HomeTransitionModel {
 	      Pane view = loader.load();
 	      mainview.setCenter(view);
 	      PersonCanEditController cont = loader.getController();
-	      cont.setModel(model);
+	      cont.setModel(model,personTransitionModel);
 	      
 	      
 	    } catch (IOException e) {
@@ -53,8 +55,8 @@ public class HomeTransitionModel {
 	      Pane view = loader.load();
 	      mainview.setTop(null);
 	      mainview.setCenter(view);
-	      LoginController cont = loader.getController();
-	      cont.setModel(model);
+	      LoginPageController cont = loader.getController();
+	      cont.setModel(loginNavigationModel);
 	    } catch (IOException e) {
 	      // TODO Auto-generated catch block
 	      e.printStackTrace();
