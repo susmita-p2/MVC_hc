@@ -69,15 +69,9 @@ public class LoginNavigationModel implements LoginNavigationModelInterface
 	      Node center = (Node)personLoader.load();
 	      PersonCanEditController personCont = personLoader.getController();
 	      personCont.setModel(personModel, personTransitionModel);
-	      mainview.setCenter(center);
-	      
-	      //TODO: add controller and model
-	      //TopB cont = loader.getController();
-	      //cont.setModel(model);
-	      
+	      mainview.setCenter(center);	      
 	      
 	    } catch (IOException e) {
-	      // TODO Auto-generated catch block
 	      e.printStackTrace();
 	    }
 	}
