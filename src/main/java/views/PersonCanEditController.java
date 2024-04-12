@@ -11,7 +11,6 @@ public class PersonCanEditController {
 
 	PersonTransitionModel transitionModel;
 	PersonModel model;
-	PersonTransitionModel transitionModel; 
 	
     @FXML
     private Label descriptionLabel;

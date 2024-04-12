@@ -22,7 +22,7 @@ public class LoginNavigationModel implements LoginNavigationModelInterface
 	    this.mainview = view;
 	    homeTransitionModel = new HomeTransitionModel();
 	    personModel = new PersonModel();
-		personTransitionModel = new PersonTransitionModel();
+		personTransitionModel = new PersonTransitionModel(view, personModel);
 	    
 	 }
 	@Override

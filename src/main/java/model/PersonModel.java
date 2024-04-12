@@ -40,7 +40,29 @@ public class PersonModel
 		this.page_links = page_links;
 	}
 	public PersonModel() {
-		// TODO Auto-generated constructor stub
+		this.name = new SimpleStringProperty();
+		this.description.set("John Doe");
+		
+		this.email = new SimpleStringProperty();
+		this.email.set("johndoent@gmail.com");
+		
+		this.pronouns = new SimpleStringProperty();
+		this.pronouns.set("he/him");
+		
+		this.phone = new SimpleStringProperty();
+		this.phone.set("333-333-4444");
+
+		this.id = new SimpleStringProperty();
+		this.description.set("25");
+		
+		this.description = new SimpleStringProperty();
+		this.description.set("Hi yes this is a John Doe description");
+		
+		this.external_links = FXCollections.observableArrayList();
+		this.external_links.add("github.com");
+		this.external_links.add("linkedin.com");
+		
+		this.page_links = FXCollections.emptyObservableMap();
 	}
 	/**
 	 * @return the name
