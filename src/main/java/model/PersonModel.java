@@ -39,6 +39,9 @@ public class PersonModel
 		this.external_links = external_links;
 		this.page_links = page_links;
 	}
+	public PersonModel() {
+		// TODO Auto-generated constructor stub
+	}
 	/**
 	 * @return the name
 	 */

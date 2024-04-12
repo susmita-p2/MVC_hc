@@ -3,17 +3,27 @@ package model;
 import java.io.IOException;
 
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import views.HomeBarController;
 import views.LoginPageController;
+import views.PersonCanEditController;
 
 public class LoginNavigationModel implements LoginNavigationModelInterface
 {
 	BorderPane mainview;
+	HomeTransitionModel homeTransitionModel;
+	PersonModel personModel;
+	PersonTransitionModel personTransitionModel;
 	
 	 public LoginNavigationModel(BorderPane view)
 	 {
 	    this.mainview = view;
+	    homeTransitionModel = new HomeTransitionModel();
+	    personModel = new PersonModel();
+		personTransitionModel = new PersonTransitionModel();
+	    
 	 }
 	@Override
 	public void showLogin()
@@ -37,26 +47,28 @@ public class LoginNavigationModel implements LoginNavigationModelInterface
 	@Override
 	public void showHomepage()
 	{
-	    FXMLLoader loader = new FXMLLoader();
+	    FXMLLoader homeLoader = new FXMLLoader();
+	    FXMLLoader personLoader = new FXMLLoader();
+
 	    
 	    try {
 	    	
 	    //set top
-		  loader.setLocation(LoginNavigationModel.class
+		  homeLoader.setLocation(LoginNavigationModel.class
 			      .getResource("../views/Home.fxml"));
 
-	      Pane topBanner = loader.load();
+	      Pane topBanner = homeLoader.load();
+	      HomeBarController cont = homeLoader.getController();
+	      cont.setModel(homeTransitionModel);
 	      mainview.setTop(topBanner);
-
-	      //TODO: add controller and model
-	      //TopB cont = loader.getController();
-	      //cont.setModel(model);
 	      
 	    //set center
-		  loader.setLocation(LoginNavigationModel.class
-			      .getResource("../views/PageEditView.fxml"));
+		  personLoader.setLocation(LoginNavigationModel.class
+			      .getResource("../views/PersonCanEditView.fxml"));
 
-	      Pane center = loader.load();
+	      Node center = (Node)personLoader.load();
+	      PersonCanEditController personCont = personLoader.getController();
+	      personCont.setModel(personModel, personTransitionModel);
 	      mainview.setCenter(center);
 	      
 	      //TODO: add controller and model
