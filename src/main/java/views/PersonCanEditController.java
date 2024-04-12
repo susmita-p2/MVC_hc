@@ -11,6 +11,8 @@ public class PersonCanEditController {
 
 	PersonTransitionModel transitionModel;
 	PersonModel model;
+	PersonTransitionModel transitionModel; 
+	
     @FXML
     private Label descriptionLabel;
 
@@ -26,9 +28,10 @@ public class PersonCanEditController {
     @FXML
     private Label pronounsLabel;
 
-    public void setModel(PersonModel newModel)
+    public void setModel(PersonModel newModel, PersonTransitionModel newTransitionModel)
     {
     	model = newModel;
+    	transitionModel = newTransitionModel;
     	Bindings.bindBidirectional(nameLabel.textProperty(), model.getName());
     	Bindings.bindBidirectional(pronounsLabel.textProperty(), model.getPronouns());
     	Bindings.bindBidirectional(emailLabel.textProperty(), model.getEmail());
