@@ -12,20 +12,23 @@ import views.LoginPageController;
 public class HomeTransitionModel {
 	BorderPane mainview;
 	PersonModel model;
-	LoginNavigationModel loginNavigationModel;
-	PersonTransitionModel personTransitionModel;
+	
+	public HomeTransitionModel(BorderPane view, PersonModel newModel) {
+		mainview = view;
+		model = newModel;
+	}
 	
 	public void showHome() {
 	    FXMLLoader loader = new FXMLLoader();
 	    loader.setLocation(HomeTransitionModel.class
 	        .getResource("../views/PersonCanEditView.fxml"));
 	    try {
-	      Pane view = loader.load();
-	      mainview.setCenter(view);
+	      Node view = (Node)loader.load();
 	      PersonCanEditController cont = loader.getController();
+	  	  PersonTransitionModel personTransitionModel = new PersonTransitionModel(mainview,model);
 	      cont.setModel(model,personTransitionModel);
-	      
-	      
+	      mainview.setCenter(view);
+
 	    } catch (IOException e) {
 	      // TODO Auto-generated catch block
 	      e.printStackTrace();
@@ -36,11 +39,10 @@ public class HomeTransitionModel {
 	    loader.setLocation(HomeTransitionModel.class
 	        .getResource("../views/Directory.fxml"));
 	    try {
-	      Pane view = loader.load();
-	      mainview.setCenter(view);
+	      Node view = (Node)loader.load();
 	      DirectoryController cont = loader.getController();
 	      cont.setModel(model);
-	      
+	      mainview.setCenter(view);
 	      
 	    } catch (IOException e) {
 	      // TODO Auto-generated catch block
@@ -50,13 +52,15 @@ public class HomeTransitionModel {
 	public void showLogin() {
 	    FXMLLoader loader = new FXMLLoader();
 	    loader.setLocation(HomeTransitionModel.class
-	        .getResource("../views/Login.fxml"));
+	        .getResource("../views/LoginPage.fxml"));
 	    try {
 	      Pane view = loader.load();
+
+	      LoginPageController cont = loader.getController();
+	  	  LoginNavigationModel loginNavigationModel = new LoginNavigationModel(mainview);
+	      cont.setModel(loginNavigationModel);
 	      mainview.setTop(null);
 	      mainview.setCenter(view);
-	      LoginPageController cont = loader.getController();
-	      cont.setModel(loginNavigationModel);
 	    } catch (IOException e) {
 	      // TODO Auto-generated catch block
 	      e.printStackTrace();
