@@ -7,10 +7,13 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import model.PersonModel;
+import model.PersonTransitionModel;
 
 public class PersonEditController {
 
 	PersonModel model;
+	PersonTransitionModel transition;
+	
     @FXML
     private TextArea descriptionField;
 
@@ -36,20 +39,20 @@ public class PersonEditController {
     void onAddLinkClick(ActionEvent event) {
 
     }
-    public void setModel(PersonModel newModel)
+    public void setModel(PersonModel newModel, PersonTransitionModel transitionModel)
     {
     	model = newModel;
-   
+    	transition = transitionModel;
     }
 
     @FXML
     void onCancelClick(ActionEvent event) {
-
+    	transition.showUneditablePerson();
     }
 
     @FXML
     void onUpdateClick(ActionEvent event) {
-
+    	transition.showUneditablePerson();
     }
 
 }
