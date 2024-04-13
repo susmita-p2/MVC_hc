@@ -4,6 +4,8 @@ import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
+import javafx.beans.property.SimpleMapProperty;
+import java.util.HashMap;
 
 public class PersonModel
 {
@@ -14,7 +16,7 @@ public class PersonModel
 	StringProperty  id = new SimpleStringProperty();
 	StringProperty  description= new SimpleStringProperty();
 	ObservableList<String> externalLinks = FXCollections.observableArrayList();
-	ObservableMap<String, ObservableList<String>> internalLinks = FXCollections.observableHashMap();
+	HashMap<String, ObservableList<String>> internalLinks;
 	/**
 	 * @param name
 	 * @param email
@@ -27,7 +29,7 @@ public class PersonModel
 	 */
 	public PersonModel(StringProperty name, StringProperty email, StringProperty pronouns, StringProperty phone,
 			StringProperty id, StringProperty description, ObservableList<String> external_links,
-			ObservableMap<String, ObservableList<String>> page_links)
+			HashMap<String, ObservableList<String>> page_links)
 	{
 		super();
 		this.name = name;
@@ -39,6 +41,7 @@ public class PersonModel
 		this.externalLinks = external_links;
 		this.internalLinks = page_links;
 	}
+	
 	public PersonModel() {
 		this.name = new SimpleStringProperty();
 		this.name.set("John Doe");
@@ -62,7 +65,7 @@ public class PersonModel
 		this.externalLinks.add("github.com");
 		this.externalLinks.add("linkedin.com");
 		
-		this.internalLinks = FXCollections.emptyObservableMap();
+		this.internalLinks = new HashMap<String, ObservableList<String>>();;
 		
 		this.initializeInternalLinksSampleValues();
 		
@@ -105,11 +108,13 @@ public class PersonModel
 				{}
 		};
 		
-		
+
 		for(int i=0; i<linkNames.length; i++)
 		{
 			ObservableList<String> currArrayList = FXCollections.observableArrayList();
 			String currName = linkNames[i];
+			
+			
 			for(int j=0; j<linkValues[i].length; j++)
 			{
 				currArrayList.add(linkValues[i][j]);
@@ -218,7 +223,7 @@ public class PersonModel
 	/**
 	 * @return the page_links
 	 */
-	public ObservableMap<String, ObservableList<String>> getPage_links()
+	public HashMap<String, ObservableList<String>> getPage_links()
 	{
 		return internalLinks;
 	}
