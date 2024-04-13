@@ -13,17 +13,12 @@ import views.PersonCanEditController;
 public class LoginNavigationModel implements LoginNavigationModelInterface
 {
 	BorderPane mainview;
-	HomeTransitionModel homeTransitionModel;
 	PersonModel personModel;
-	PersonTransitionModel personTransitionModel;
 	
 	 public LoginNavigationModel(BorderPane view)
 	 {
 	    this.mainview = view;
-	    homeTransitionModel = new HomeTransitionModel();
 	    personModel = new PersonModel();
-		personTransitionModel = new PersonTransitionModel(view, personModel);
-	    
 	 }
 	@Override
 	public void showLogin()
@@ -59,6 +54,7 @@ public class LoginNavigationModel implements LoginNavigationModelInterface
 
 	      Pane topBanner = homeLoader.load();
 	      HomeBarController cont = homeLoader.getController();
+	  	  HomeTransitionModel homeTransitionModel = new HomeTransitionModel(mainview, personModel);
 	      cont.setModel(homeTransitionModel);
 	      mainview.setTop(topBanner);
 	      
@@ -68,6 +64,7 @@ public class LoginNavigationModel implements LoginNavigationModelInterface
 
 	      Node center = (Node)personLoader.load();
 	      PersonCanEditController personCont = personLoader.getController();
+	  	  PersonTransitionModel personTransitionModel = new PersonTransitionModel(mainview,personModel);
 	      personCont.setModel(personModel, personTransitionModel);
 	      mainview.setCenter(center);	      
 	      
