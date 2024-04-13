@@ -13,8 +13,8 @@ public class PersonModel
 	StringProperty phone = new SimpleStringProperty();
 	StringProperty  id = new SimpleStringProperty();
 	StringProperty  description= new SimpleStringProperty();
-	ObservableList<String> external_links= FXCollections.observableArrayList();
-	ObservableMap<String, ObservableList<String>> page_links = FXCollections.observableHashMap();
+	ObservableList<String> externalLinks = FXCollections.observableArrayList();
+	ObservableMap<String, ObservableList<String>> internalLinks = FXCollections.observableHashMap();
 	/**
 	 * @param name
 	 * @param email
@@ -36,12 +36,12 @@ public class PersonModel
 		this.phone = phone;
 		this.id = id;
 		this.description = description;
-		this.external_links = external_links;
-		this.page_links = page_links;
+		this.externalLinks = external_links;
+		this.internalLinks = page_links;
 	}
 	public PersonModel() {
 		this.name = new SimpleStringProperty();
-		this.description.set("John Doe");
+		this.name.set("John Doe");
 		
 		this.email = new SimpleStringProperty();
 		this.email.set("johndoent@gmail.com");
@@ -53,17 +53,75 @@ public class PersonModel
 		this.phone.set("333-333-4444");
 
 		this.id = new SimpleStringProperty();
-		this.description.set("25");
+		this.id.set("25");
 		
 		this.description = new SimpleStringProperty();
 		this.description.set("Hi yes this is a John Doe description");
 		
-		this.external_links = FXCollections.observableArrayList();
-		this.external_links.add("github.com");
-		this.external_links.add("linkedin.com");
+		this.externalLinks = FXCollections.observableArrayList();
+		this.externalLinks.add("github.com");
+		this.externalLinks.add("linkedin.com");
 		
-		this.page_links = FXCollections.emptyObservableMap();
+		this.internalLinks = FXCollections.emptyObservableMap();
+		
+		this.initializeInternalLinksSampleValues();
+		
+		
 	}
+	
+	public void initializeInternalLinksSampleValues()
+	{
+		String[] linkNames = {
+				"employer",
+				"follower",
+				"following",
+				"friend",
+				"project",
+				"skill",
+				"news",
+				"job_posting",
+				"pending_job",
+				"viewer",
+				"editor"
+		};
+		
+		String[][] linkValues = {
+				// employers
+				{
+					"Amazon",
+					"Big Tech",
+					"Centre College"
+				}
+				,
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{},
+				{}
+		};
+		
+		
+		for(int i=0; i<linkNames.length; i++)
+		{
+			ObservableList<String> currArrayList = FXCollections.observableArrayList();
+			String currName = linkNames[i];
+			for(int j=0; j<linkValues[i].length; j++)
+			{
+				currArrayList.add(linkValues[i][j]);
+			}
+			
+			this.internalLinks.put(currName, currArrayList);
+		}
+
+		
+		
+	}
+	
 	/**
 	 * @return the name
 	 */
@@ -153,7 +211,7 @@ public class PersonModel
 	 */
 	public ObservableList<String> getExternal_links()
 	{
-		return external_links;
+		return externalLinks;
 	}
 	
 	
@@ -162,7 +220,7 @@ public class PersonModel
 	 */
 	public ObservableMap<String, ObservableList<String>> getPage_links()
 	{
-		return page_links;
+		return internalLinks;
 	}
 	
 	
