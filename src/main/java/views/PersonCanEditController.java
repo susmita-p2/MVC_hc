@@ -29,8 +29,8 @@ public class PersonCanEditController {
 
     public void setModel(PersonModel newModel, PersonTransitionModel newTransitionModel)
     {
-    	model = newModel;
     	transitionModel = newTransitionModel;
+    	model = newModel;
     	Bindings.bindBidirectional(nameLabel.textProperty(), model.getName());
     	Bindings.bindBidirectional(pronounsLabel.textProperty(), model.getPronouns());
     	Bindings.bindBidirectional(emailLabel.textProperty(), model.getEmail());
@@ -38,13 +38,15 @@ public class PersonCanEditController {
     	Bindings.bindBidirectional(descriptionLabel.textProperty(), model.getDescription());
     }
     @FXML
-    void onFollowClick(ActionEvent event) {
-	 	
+    public void onEditClick(ActionEvent event) {
+    	transitionModel.showEditable();
     }
-    
     @FXML
-    void onEditClick(ActionEvent event) {
-    	transitionModel.showEditablePerson();
+    public void onFollowClick(ActionEvent event) {
+    	transitionModel.showFollowed();
     }
-
+    @FXML
+    public void onUnfollowClick(ActionEvent event) {
+    	transitionModel.showUneditable();
+    }
 }

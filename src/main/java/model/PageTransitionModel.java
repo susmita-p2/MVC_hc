@@ -5,25 +5,24 @@ import java.io.IOException;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.BorderPane;
-import views.PersonCanEditController;
-import views.PersonEditController;
+import views.PageCanEditController;
+import views.PageEditController;
 
-public class PersonTransitionModel extends TransitionModel
-{
-	public PersonTransitionModel(BorderPane view, PersonModel newModel)
-	{
-		super(view,newModel);
+public class PageTransitionModel extends TransitionModel {
+
+	public PageTransitionModel(BorderPane view, PersonModel newModel) {
+		super(view, newModel);
 	}
-	
+
 	public void showEditable()
 	{
 		FXMLLoader loader = new FXMLLoader();
 		 loader.setLocation(PersonTransitionModel.class
-			        .getResource("../views/PersonEditView.fxml"));
+			        .getResource("../views/PageEditView.fxml"));
 			    try {
 			      Node view = loader.load();
 			      mainview.setCenter(view);
-			      PersonEditController cont = loader.getController();
+			      PageEditController cont = loader.getController();
 			      cont.setModel(model,this);
 			    } catch (IOException e) {
 			      // TODO Auto-generated catch block
@@ -34,11 +33,11 @@ public class PersonTransitionModel extends TransitionModel
 	{
 		FXMLLoader loader = new FXMLLoader();
 		 loader.setLocation(PersonTransitionModel.class
-			        .getResource("../views/PersonCanEditView.fxml"));
+			        .getResource("../views/PageCanEditView.fxml"));
 			    try {
 			      Node view = loader.load();
 			      mainview.setCenter(view);
-			      PersonCanEditController cont = loader.getController();
+			      PageCanEditController cont = loader.getController();
 			      cont.setModel(model,this);
 			    } catch (IOException e) {
 			      // TODO Auto-generated catch block
@@ -49,11 +48,11 @@ public class PersonTransitionModel extends TransitionModel
 	{
 		FXMLLoader loader = new FXMLLoader();
 		 loader.setLocation(PersonTransitionModel.class
-			        .getResource("../views/PersonFollowedCanEdit.fxml"));
+			        .getResource("../views/PageFollowedCanEditView.fxml"));
 			    try {
 			      Node view = loader.load();
 			      mainview.setCenter(view);
-			      PersonCanEditController cont = loader.getController();
+			      PageCanEditController cont = loader.getController();
 			      cont.setModel(model,this);
 			    } catch (IOException e) {
 			      // TODO Auto-generated catch block
@@ -64,11 +63,11 @@ public class PersonTransitionModel extends TransitionModel
 	{
 		FXMLLoader loader = new FXMLLoader();
 		 loader.setLocation(PersonTransitionModel.class
-			        .getResource("../views/PersonFollowedView.fxml"));
+			        .getResource("../views/PageFollowedView.fxml"));
 			    try {
 			      Node view = loader.load();
 			      mainview.setCenter(view);
-			      PersonCanEditController cont = loader.getController();
+			      PageCanEditController cont = loader.getController();
 			      cont.setModel(model,this);
 			    } catch (IOException e) {
 			      // TODO Auto-generated catch block
@@ -79,15 +78,16 @@ public class PersonTransitionModel extends TransitionModel
 	{
 		FXMLLoader loader = new FXMLLoader();
 		 loader.setLocation(PersonTransitionModel.class
-			        .getResource("../views/PersonView.fxml"));
+			        .getResource("../views/PageView.fxml"));
 			    try {
 			      Node view = loader.load();
 			      mainview.setCenter(view);
-			      PersonCanEditController cont = loader.getController();
+			      PageCanEditController cont = loader.getController();
 			      cont.setModel(model,this);
 			    } catch (IOException e) {
 			      // TODO Auto-generated catch block
 			      e.printStackTrace();
 			    }		
 	}
+
 }
