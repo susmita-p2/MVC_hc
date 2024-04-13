@@ -10,10 +10,8 @@ import model.PersonModel;
 import model.PersonTransitionModel;
 
 public class PersonEditController {
-
 	PersonModel model;
 	PersonTransitionModel transition;
-	
     @FXML
     private TextArea descriptionField;
 
@@ -44,15 +42,11 @@ public class PersonEditController {
     	model = newModel;
     	transition = transitionModel;
     }
-
     @FXML
-    void onCancelClick(ActionEvent event) {
-    	transition.showUneditablePerson();
+    public void onUpdateClick(ActionEvent event) {
+    	transition.showUneditable();
     }
-
-    @FXML
-    void onUpdateClick(ActionEvent event) {
-    	transition.showUneditablePerson();
+    public void onCancelClick(ActionEvent event) {
+    	transition.showUneditable();
     }
-
 }
