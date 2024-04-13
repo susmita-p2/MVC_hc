@@ -41,7 +41,7 @@ public class PersonModel
 	}
 	public PersonModel() {
 		this.name = new SimpleStringProperty();
-		this.description.set("John Doe");
+		this.name.set("John Doe");
 		
 		this.email = new SimpleStringProperty();
 		this.email.set("johndoent@gmail.com");
@@ -53,7 +53,7 @@ public class PersonModel
 		this.phone.set("333-333-4444");
 
 		this.id = new SimpleStringProperty();
-		this.description.set("25");
+		this.id.set("25");
 		
 		this.description = new SimpleStringProperty();
 		this.description.set("Hi yes this is a John Doe description");
