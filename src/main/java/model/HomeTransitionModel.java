@@ -41,7 +41,8 @@ public class HomeTransitionModel {
 	    try {
 	      Node view = (Node)loader.load();
 	      DirectoryController cont = loader.getController();
-	      cont.setModel(model);
+	      DirectoryTransitionModel transitionModel = new DirectoryTransitionModel(mainview,model);
+	      cont.setModel(model,transitionModel);
 	      mainview.setCenter(view);
 	      
 	    } catch (IOException e) {
