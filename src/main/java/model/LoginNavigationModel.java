@@ -18,7 +18,7 @@ public class LoginNavigationModel implements LoginNavigationModelInterface
 	 public LoginNavigationModel(BorderPane view)
 	 {
 	    this.mainview = view;
-	    personModel = new PersonModel();
+	    this.personModel = new PersonModel();
 	 }
 	@Override
 	public void showLogin()
@@ -64,6 +64,7 @@ public class LoginNavigationModel implements LoginNavigationModelInterface
 
 	      Node center = (Node)personLoader.load();
 	      PersonCanEditController personCont = personLoader.getController();
+	      
 	  	  PersonTransitionModel personTransitionModel = new PersonTransitionModel(mainview,personModel);
 	      personCont.setModel(personModel, personTransitionModel);
 	      mainview.setCenter(center);	      

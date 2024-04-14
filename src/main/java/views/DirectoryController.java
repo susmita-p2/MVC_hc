@@ -7,20 +7,21 @@ import javafx.event.ActionEvent;
 
 public class DirectoryController {
 
-	PersonModel model;
-	DirectoryTransitionModel transitionModel;
-	public void setModel(PersonModel newModel, DirectoryTransitionModel newTransitionModel) {
-		model = newModel;
-		transitionModel = newTransitionModel;
+	PersonModel person;
+	DirectoryTransitionModel dirModel;
+	
+	public void setModel(PersonModel person, DirectoryTransitionModel dirModel) {
+		this.person = person;
+		this.dirModel = dirModel;
 	}
     @FXML
     void onClickAll(ActionEvent event) {
-    	transitionModel.showLinkPages();
+    	dirModel.showAllPages();
     }
 
     @FXML
-    void onClickMy(ActionEvent event) {
-
+    void onClickMyLinks(ActionEvent event) {
+    	dirModel.showLinkPages();
     }
 
 }

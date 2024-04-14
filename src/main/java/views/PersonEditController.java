@@ -1,5 +1,6 @@
 package views;
 
+import javafx.beans.binding.Bindings;
 //import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -32,7 +33,7 @@ public class PersonEditController {
 
     @FXML
     private TextField pronounsField;
-
+    
     @FXML
     void onAddLinkClick(ActionEvent event) {
 
@@ -41,9 +42,34 @@ public class PersonEditController {
     {
     	model = newModel;
     	transition = transitionModel;
+    	
+    	nameField.setText(model.getName().get()); 
+    	emailField.setText(model.getEmail().get()); 
+    	pronounsField.setText(model.getPronouns().get()); 
+    	phoneField.setText(model.getPhone().get()); 
+    	descriptionField.setText(model.getDescription().get()); 
+
+    	
+    	
+//    	Bindings.bindBidirectional(nameField.textProperty(), model.getName());
+//    	Bindings.bindBidirectional(pronounsField.textProperty(), model.getPronouns());
+//    	Bindings.bindBidirectional(emailField.textProperty(), model.getEmail());
+//    	Bindings.bindBidirectional(phoneField.textProperty(), model.getPhone());
+//    	Bindings.bindBidirectional(descriptionField.textProperty(), model.getDescription());
+
+    	
     }
     @FXML
     public void onUpdateClick(ActionEvent event) {
+    	//update variables
+    	model.getName().setValue(nameField.getText());
+    	model.getEmail().setValue(emailField.getText());
+    	model.getPronouns().setValue(pronounsField.getText());
+    	model.getPhone().setValue(phoneField.getText());
+    	model.getDescription().setValue(descriptionField.getText());
+
+
+    	
     	transition.showUneditable();
     }
     public void onCancelClick(ActionEvent event) {

@@ -10,9 +10,12 @@ import views.PersonEditController;
 
 public class PersonTransitionModel extends TransitionModel
 {
+	String personPageId;
+	
 	public PersonTransitionModel(BorderPane view, PersonModel newModel)
 	{
 		super(view,newModel);
+
 	}
 	
 	public void showEditable()

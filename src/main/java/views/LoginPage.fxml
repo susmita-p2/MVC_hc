@@ -13,7 +13,7 @@
    <top>
       <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Label contentDisplay="CENTER" text="Login">
+            <Label contentDisplay="CENTER" text="Welcome to Honeycomb!">
                <HBox.margin>
                   <Insets left="275.0" right="100.0" top="40.0" />
                </HBox.margin>
