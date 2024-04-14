@@ -29,7 +29,7 @@ public class DirectoryTransitionModel
 			      Node view = loader.load();
 			      mainview.setCenter(view);
 			      AllPageTypesFlowController cont = loader.getController();
-			      cont.setModel(model, new AllPagesTransitionModel());
+			      cont.setModel(model, new AllPagesModel(mainview, model));
 			    } catch (IOException e) {
 			      e.printStackTrace();
 			    }

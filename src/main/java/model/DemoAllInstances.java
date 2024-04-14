@@ -8,6 +8,7 @@ public class DemoAllInstances
 	ObservableList<String> allPeople;
 	ObservableList<String> allCompanies;
 	
+	
 	public DemoAllInstances()
 	{
 		allPeople = FXCollections.observableArrayList();
@@ -15,6 +16,7 @@ public class DemoAllInstances
 		allPeople.add("Alice");
 		allPeople.add("John Doe");
 		allPeople.add("Brad Keith");	
+
 	}
 	
 	public ObservableList<String> getAllPeople()

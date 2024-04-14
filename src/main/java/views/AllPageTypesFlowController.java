@@ -1,15 +1,19 @@
 package views;
 
+import javafx.beans.binding.Bindings;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import model.DirectoryTransitionModel;
 import model.PersonModel;
-import model.AllPagesTransitionModel;
+import model.AllPagesModel;
 
 public class AllPageTypesFlowController {
 	PersonModel model;
-	AllPagesTransitionModel allPagesTransitionModel;
+	AllPagesModel allPagesModel;
 	
     @FXML
     private Button companyPageTypeBtn;
@@ -28,9 +32,13 @@ public class AllPageTypesFlowController {
 
     @FXML
     private Button skillPageTypeBtn;
+    
+    @FXML
+    private ListView<String> allPagesListView;
 
     @FXML
     void onCompanyPageClick(ActionEvent event) {
+    	allPagesListView.setItems(allPagesModel.getCompanies());
 
     }
 
@@ -46,6 +54,8 @@ public class AllPageTypesFlowController {
 
     @FXML
     void onPersonPageClick(ActionEvent event) {
+    	ObservableList<String> people = allPagesModel.getPeople();
+    	allPagesListView.setItems(people);
 
     }
 
@@ -59,11 +69,11 @@ public class AllPageTypesFlowController {
 
     }
 
-	public void setModel(PersonModel model, AllPagesTransitionModel allPagesTransitionModel)
+	public void setModel(PersonModel model, AllPagesModel allPagesModel)
 	{
 		this.model = model;
-		this.allPagesTransitionModel = allPagesTransitionModel;
-		
+		this.allPagesModel = allPagesModel;
+		allPagesListView.setItems(FXCollections.observableArrayList());
 	}
 
 }
