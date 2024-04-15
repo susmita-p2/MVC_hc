@@ -97,6 +97,11 @@ public class PersonLinksTypesFlowController {
     void onViewerButtonClick(ActionEvent event) {
 
     }
+    @FXML
+    void onClickAmazon(ActionEvent event) {
+
+    }
+    
 
 }
 
