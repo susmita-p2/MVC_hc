@@ -35,8 +35,8 @@ public class AllLinksModel {
 	    try {
 	      Pane view = loader.load();
 	      mainview.setCenter(view);
-	      //LoginPageController cont = loader.getController();
-	      //cont.setModel(this);
+	      PageCanEditController cont = loader.getController();
+	      cont.setModel(this);
 	      
 	      
 	    } catch (IOException e) {
