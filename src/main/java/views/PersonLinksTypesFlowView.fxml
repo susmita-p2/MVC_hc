@@ -55,6 +55,11 @@
                   <Font size="19.0" />
                </font>
             </Button>
+            <Button mnemonicParsing="false" onAction="#onClickAmazon" style="-fx-background-color: Pink;" text="Amazon">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
          </children>
       </FlowPane>
    </top>

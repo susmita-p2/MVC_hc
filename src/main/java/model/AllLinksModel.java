@@ -1,7 +1,12 @@
 package model;
 
+import java.io.IOException;
+
 import javafx.collections.ObservableList;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
+import views.LoginPageController;
 
 public class AllLinksModel {
 	
@@ -20,6 +25,25 @@ public class AllLinksModel {
 		System.out.println( storageDemo.getAllLinks(this.model.getId().getValue(), link));
 		return storageDemo.getAllLinks(this.model.getId().getValue(), link);
 	}
-
 	
+	//TODO delete this!
+	public void showAmazon()
+	{
+	    FXMLLoader loader = new FXMLLoader();
+	    loader.setLocation(LoginNavigationModel.class
+	        .getResource("../views/PageCanEdit.fxml"));
+	    try {
+	      Pane view = loader.load();
+	      mainview.setCenter(view);
+	      PageCanEditController cont = loader.getController();
+	      cont.setModel(this);
+	      
+	      
+	    } catch (IOException e) {
+	      // TODO Auto-generated catch block
+	      e.printStackTrace();
+	    }
+
+
+	}
 }
