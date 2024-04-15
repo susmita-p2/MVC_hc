@@ -21,15 +21,15 @@ public class PageCanEditController
     private Label nameLabel;
     
     @FXML
-    public void onClickEdit(ActionEvent event) {
+    public void onEditClick(ActionEvent event) {
     	transition.showEditable();
     }
     @FXML
-    public void onClickFollow(ActionEvent event) {
+    public void onFollowClick(ActionEvent event) {
     	transition.showFollowed();
     }
     @FXML
-    public void onClickUnfollow(ActionEvent event) {
+    public void onUnfollowClick(ActionEvent event) {
     	transition.showUneditable();
     }
 }
