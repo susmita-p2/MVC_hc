@@ -32,4 +32,9 @@ public class PageCanEditController
     public void onClickUnfollow(ActionEvent event) {
     	transition.showUneditable();
     }
+    
+    public void setModel()
+    {
+    	
+    }
 }

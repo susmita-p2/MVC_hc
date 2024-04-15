@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import views.LoginPageController;
+import views.PageCanEditController;
 
 public class AllLinksModel {
 	
@@ -36,7 +37,7 @@ public class AllLinksModel {
 	      Pane view = loader.load();
 	      mainview.setCenter(view);
 	      PageCanEditController cont = loader.getController();
-	      cont.setModel(this);
+	      cont.setModel();
 	      
 	      
 	    } catch (IOException e) {
