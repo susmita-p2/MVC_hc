@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.PageCanEditController">
    <content>
       <VBox prefHeight="350.0" prefWidth="600.0">
          <children>
@@ -27,12 +27,12 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label fx:id="nameLabel" text="Label" GridPane.columnSpan="2">
+                  <Label fx:id="nameLabel" text="Amazon" GridPane.columnSpan="2">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="descriptionLabel" text="Label" GridPane.columnSpan="4" GridPane.rowIndex="1" GridPane.rowSpan="2" GridPane.valignment="TOP">
+                  <Label fx:id="descriptionLabel" text="A global marketplace and shipping company. Definitly not evil." GridPane.columnSpan="4" GridPane.rowIndex="1" GridPane.rowSpan="2" GridPane.valignment="TOP">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin>
