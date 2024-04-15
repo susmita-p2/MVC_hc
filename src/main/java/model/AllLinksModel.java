@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import views.LoginPageController;
@@ -34,7 +35,7 @@ public class AllLinksModel {
 	    loader.setLocation(LoginNavigationModel.class
 	        .getResource("../views/PageCanEdit.fxml"));
 	    try {
-	      Pane view = loader.load();
+	      Node view = (Node) loader.load();
 	      mainview.setCenter(view);
 	      PageCanEditController cont = loader.getController();
 	      cont.setModel();
